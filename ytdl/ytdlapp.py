@@ -13,9 +13,9 @@ class YtdlApp(App):
     def download(self, url):
         options = {}
         options['ignoreerrors'] = True
+        options['outtmpl'] = 'videos/%(title)s-%(id)s.%(ext)s'
 
         with youtube_dl.YoutubeDL(options) as ydl:
-            url = 'http://www.youtube.com/watch?v=BaW_jenozKcj'
             dl_thread = threading.Thread(target=ydl.download, args=([url],))
             dl_thread.start()
 
