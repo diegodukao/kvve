@@ -1,4 +1,9 @@
 #:kivy 1.9.2
+#:import MDLabel kivymd.label.MDLabel
+#:import MDList kivymd.list.MDList
+#:import MDFlatButton kivymd.button.MDFlatButton
+#:import MDTextField kivymd.textfields.MDTextField
+#:import OneLineListItem kivymd.list.OneLineListItem
 
 BoxLayout:
     orientation: 'vertical'
@@ -6,15 +11,31 @@ BoxLayout:
 
     BoxLayout:
         size_hint_y: .1
-        TextInput:
+        MDTextField:
             id: url_input
             size_hint_x: .7
-        Button:
+            hint_text: "Video url"
+        MDFlatButton:
             text: 'Download'
             size_hint_x: .3
-            on_press: app.download(root.download_url.text)
+            opposite_colors: True
+            on_release: app.download(root.download_url.text)
 
-    VideoPlayer:
+    BoxLayout:
         size_hint_y: .9
-        source: "videos/Ventre - 'Pernas' (Session ao vivo)-3dmeLyrDI2k.mp4"
+
+        ScrollView:
+            size_hint_x: .3
+            do_scroll_x: False
+            MDList:
+                id: videos_list
+                OneLineListItem:
+                    text: "fasf"
+                    on_press: print("woiew")
+                OneLineListItem:
+                    text: "iopio"
+
+        VideoPlayer:
+            size_hint_x: .7
+            source: "videos/Ventre - 'Pernas' (Session ao vivo)-3dmeLyrDI2k.mp4"
 

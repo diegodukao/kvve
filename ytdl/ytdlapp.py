@@ -3,13 +3,12 @@ import threading
 import youtube_dl
 
 from kivy.app import App
+from kivymd.theming import ThemeManager
 
 
 class YtdlApp(App):
-    """Basic kivy app
+    theme_cls = ThemeManager()
 
-    Edit ytdl.kv to get started.
-    """
     def download(self, url):
         options = {}
         options['ignoreerrors'] = True
@@ -20,4 +19,5 @@ class YtdlApp(App):
             dl_thread.start()
 
     def build(self):
+        self.theme_cls.theme_style = 'Dark'
         return self.root
