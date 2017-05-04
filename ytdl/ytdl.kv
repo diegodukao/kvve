@@ -5,6 +5,8 @@
 #:import MDTextField kivymd.textfields.MDTextField
 #:import OneLineListItem kivymd.list.OneLineListItem
 
+#:import VideosList ytdl.widgets.VideosList
+
 BoxLayout:
     orientation: 'vertical'
     download_url: url_input
@@ -27,13 +29,8 @@ BoxLayout:
         ScrollView:
             size_hint_x: .3
             do_scroll_x: False
-            MDList:
+            VideosList:
                 id: videos_list
-                OneLineListItem:
-                    text: "fasf"
-                    on_press: print("woiew")
-                OneLineListItem:
-                    text: "iopio"
 
         VideoPlayer:
             size_hint_x: .7
