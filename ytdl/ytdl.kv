@@ -10,6 +10,7 @@
 BoxLayout:
     orientation: 'vertical'
     download_url: url_input
+    player: video_player
 
     BoxLayout:
         size_hint_y: .1
@@ -20,7 +21,7 @@ BoxLayout:
         MDFlatButton:
             text: 'Download'
             size_hint_x: .3
-            opposite_colors: True
+            font_color: "white"
             on_release: app.download(root.download_url.text)
 
     BoxLayout:
@@ -33,6 +34,7 @@ BoxLayout:
                 id: videos_list
 
         VideoPlayer:
+            id: video_player
             size_hint_x: .7
             source: "videos/Ventre - 'Pernas' (Session ao vivo)-3dmeLyrDI2k.mp4"
 
