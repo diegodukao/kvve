@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from kivymd.list import MDList, OneLineListItem
+from kivymd.list import MDList, TwoLineListItem
 
 
 class VideosList(MDList):
@@ -13,4 +13,4 @@ class VideosList(MDList):
 
         for fpath in filepaths:
             self.add_widget(
-                OneLineListItem(text=fpath.name[:24] + "..."))
+                TwoLineListItem(text=fpath.name[:40] + "..."))
