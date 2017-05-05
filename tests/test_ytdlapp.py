@@ -3,17 +3,17 @@
 
 import unittest
 
-from ytdl.ytdlapp import YtdlApp
+from kvve.kvveapp import KvveApp
 
 
-class TestYtdlApp(unittest.TestCase):
-    """TestCase for YtdlApp.
+class TestKvveApp(unittest.TestCase):
+    """TestCase for KvveApp.
     """
     def setUp(self):
-        self.app = YtdlApp()
+        self.app = KvveApp()
 
     def test_name(self):
-        self.assertEqual(self.app.name, 'ytdl')
+        self.assertEqual(self.app.name, 'kvve')
 
     def tearDown(self):
         pass

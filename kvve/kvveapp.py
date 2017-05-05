@@ -6,7 +6,7 @@ from kivy.app import App
 from kivymd.theming import ThemeManager
 
 
-class YtdlApp(App):
+class KvveApp(App):
     theme_cls = ThemeManager()
 
     def download(self, url):

@@ -4,7 +4,7 @@
 import kivy
 kivy.require('1.9.2')
 
-from ytdl.ytdlapp import YtdlApp
+from kvve.kvveapp import KvveApp
 
 if __name__ == "__main__":
-    YtdlApp().run()
+    KvveApp().run()
