@@ -2,17 +2,33 @@
 kvve
 =============================
 
-Interface in Kivy for youtube-dl
+Video player in Kivy that download videos from Youtube (and a lot of others).
 
+
+Requirements
+------------
+- Kivy 1.92 (dev)
+- KivyMD
+- youtube-dl
+
+Obs
+---
+There's a wicked workaround needed in youtube-dl to make it work with kvve.
+You need to go to `utils.py` in youtube_dl instalation and comment/remove (yes, it's
+that bad) from line 1398 to 1401 (sorry).
+This is the code that needs to be removed::
+
+    elif hasattr(out, 'buffer'):
+        enc = encoding or getattr(out, 'encoding', None) or preferredencoding()
+        byt = s.encode(enc, 'ignore')
+        out.buffer.write(byt)```
 
 Features
 --------
 
-* TODO
+- Download videos
+- Play videos
 
-
-Usage
------
 
 Launching the app
 ~~~~~~~~~~~~~~~~~
@@ -22,44 +38,3 @@ Launching the app
     cd kvve
     python main.py
 
-Running the testsuite
-~~~~~~~~~~~~~~~~~~~~~
-
-Run its testsuite either with Python3::
-
-    cd kvve
-    python -m unittest discover
-
-Or with `nose`_::
-
-    cd kvve
-    nosetests
-
-Or with `py.test`_::
-
-    cd kvve
-    py.test
-
-Deploying to Android
-~~~~~~~~~~~~~~~~~~~~
-
-You can easily run the app on Android by using the `Kivy Launcher`_.
-
-
-License
--------
-
-Distributed under the terms of the `MIT license`_, kvve free and open source software
-
-
-Issues
-------
-
-Report bugs at https://github.com/diegodukao/kvve/issues.
-
-
-.. _`Kivy Launcher`: http://kivy.org/docs/guide/packaging-android.html#packaging-your-application-for-the-kivy-launcher
-.. _`Kivy`: https://github.com/kivy/kivy
-.. _`MIT License`: http://opensource.org/licenses/MIT
-.. _`nose`: https://github.com/nose-devs/nose/
-.. _`py.test`: http://pytest.org/latest/
